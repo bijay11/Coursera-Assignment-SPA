@@ -1,10 +1,75 @@
-<!DOCTYPE html>
-<html>
+<<<<<<< HEAD
+<!doctype html>
+<html lang="en" ng-app="LunchCheck">
   <head>
-    <meta charset="utf-8">
-    <title>Hello</title>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+    </script>
+    <script type="text/javascript" src="app.js"></script>
   </head>
-  <body>
-    <h1>hello hawa</h1>
-  </body>
+<body>
+   <div class="container" ng-controller="LunchCheckController">
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control" ng-model="dishNames">
+
+             <h1>{{dishNames}}</h1>
+         </div>
+         <div class="form-group">
+             <button class="btn btn-primary" ng-click="CheckDish(dishNames, comma)">Check If Too Much</button>
+         </div>
+         <div class="form-group message">
+           <!-- Your message can go here. -->
+           {{message}}
+</div>
+         </div>
+
+
+</body>
 </html>
+=======
+<!doctype html>
+<html lang="en" ng-app="LunchCheck">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+    </script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+<body>
+   <div class="container" ng-controller="LunchCheckController">
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control" ng-model="dishNames">
+
+             <h1>{{dishNames}}</h1>
+         </div>
+         <div class="form-group">
+             <button class="btn btn-primary" ng-click="CheckDish(dishNames, comma)">Check If Too Much</button>
+         </div>
+         <div class="form-group message">
+           <!-- Your message can go here. -->
+           {{message}}
+</div>
+         </div>
+
+
+</body>
+</html>
+>>>>>>> 5a428afbbb6e982f35141bb94f7a3b685f991895
