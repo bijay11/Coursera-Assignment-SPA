@@ -25,7 +25,8 @@
     <div class="col-md-6" ng-controller='ToBuyController as toBuyItem'>
      <h2>To Buy:</h2>
      <ul>
-       <li ng-repeat="item in toBuyItem.items" class="list-custom">Buy {{item.quantity}} {{item.name}} <button ng-click='toBuyItem.buyItem($index);' class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+       <li ng-repeat="item in toBuyItem.items" class="list-custom">Buy {{item.quantity}} {{item.name}} 
+         <button ng-click='toBuyItem.buyItem($index);' class="btn btn-primary">< Bought</li>
      </ul>
      <div class="alert alert-success fade in" ng-show='toBuyItem.empty();'>
  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -34,7 +35,7 @@
 
     <!-- Already Bought List -->
     <div class="col-md-6 list-custom" ng-controller="AlreadyBoughtController as boughtItems">
-     <h2>Already Bought:</h2>
+     <h2>Alreadysdf Bought:</h2>
      <ul>
        <li ng-repeat="item in boughtItems.items" class="list-custom">Bought {{item.quantity}} {{item.name}}</li>
      </ul>
