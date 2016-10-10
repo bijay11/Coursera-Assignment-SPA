@@ -26,7 +26,7 @@
      <h2>To Buy:</h2>
      <ul>
        <li ng-repeat="item in toBuyItem.items" class="list-custom">Buy {{item.quantity}} {{item.name}} 
-         <button ng-click='toBuyItem.buyItem($index);' class="btn btn-primary">< Bought</li>
+         <button ng-click='toBuyItem.buyItem($index);' class="btn btn-primary">Bought</button></li>
      </ul>
      <div class="alert alert-success fade in" ng-show='toBuyItem.empty();'>
  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
