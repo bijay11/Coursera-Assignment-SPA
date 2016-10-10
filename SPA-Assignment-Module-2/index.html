@@ -1,1 +1,52 @@
 
+<!DOCTYPE html>
+<html ng-app="ShoppingListApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+      .list-custom{
+  padding-bottom: 5px;
+}
+
+    </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+    </script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="lead">
+        <strong>Shopping List</strong>
+      </div>
+<div class="row">
+  <div class="col-md-6">
+    <h2>To Buy</h2>
+    <div ng-controller='ToBuyController as toBuy'>
+      <ol>
+        <li ng-repeat="item in toBuy.items" class="list-custom">
+        Buy  {{ item.quantity }} of {{ item.name }}(s)
+          <button class="btn btn-primary" ng-click="toBuy.removeItems($index);">Bought</button>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="col-md-6">
+<h2>Already Bought</h2>
+              <div ng-controller='AlreadyBoughtController as alreadyBought'>
+                <ol>
+                  <li ng-repeat="boughtItems in alreadyBought.boughtItems"  class="list-custom">
+                   {{ boughtItems.quantity }} of {{ boughtItems.name }}(s)
+                  </li>
+                </ol>
+              </div>
+
+  </div>
+</div>
+
+
+         </div>
+  </body>
+</html>
