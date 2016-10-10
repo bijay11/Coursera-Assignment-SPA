@@ -1,52 +1,49 @@
-
-<!DOCTYPE html>
-<html ng-app="ShoppingListApp">
+<!doctype html>
+<html lang="en" ng-app='ShoppingListApp'>
   <head>
-    <meta charset="utf-8">
-    <title>Shopping List</title>
+    <title>Shopping List Check Off</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
-      .list-custom{
-  padding-bottom: 5px;
+.list-custom{
+  padding:5px 0;
 }
-
     </style>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
-    </script>
-    <script type="text/javascript" src="app.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="lead">
-        <strong>Shopping List</strong>
-      </div>
-<div class="row">
-  <div class="col-md-6">
-    <h2>To Buy</h2>
-    <div ng-controller='ToBuyController as toBuy'>
-      <ol>
-        <li ng-repeat="item in toBuy.items" class="list-custom">
-        Buy  {{ item.quantity }} of {{ item.name }}(s)
-          <button class="btn btn-primary" ng-click="toBuy.removeItems($index);">Bought</button>
-        </li>
-      </ol>
-    </div>
-  </div>
-  <div class="col-md-6">
-<h2>Already Bought</h2>
-              <div ng-controller='AlreadyBoughtController as alreadyBought'>
-                <ol>
-                  <li ng-repeat="boughtItems in alreadyBought.boughtItems"  class="list-custom">
-                   {{ boughtItems.quantity }} of {{ boughtItems.name }}(s)
-                  </li>
-                </ol>
-              </div>
 
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="app.js"></script>
+  </head>
+<body>
+  <div class="container">
+  <h1>Shopping List Check Off</h1>
+
+  <div class="row">
+
+    <!-- List To Buy -->
+    <div class="col-md-6" ng-controller='ToBuyController as toBuyItem'>
+     <h2>To Buy:</h2>
+     <ul>
+       <li ng-repeat="item in toBuyItem.items" class="list-custom">Buy {{item.quantity}} {{item.name}} <button ng-click='toBuyItem.buyItem($index);' class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+     </ul>
+     <div class="alert alert-success fade in" ng-show='toBuyItem.empty();'>
+ <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+       Everything is bought!</div>
+    </div>
+
+    <!-- Already Bought List -->
+    <div class="col-md-6 list-custom" ng-controller="AlreadyBoughtController as boughtItems">
+     <h2>Alreadysdf Bought:</h2>
+     <ul>
+       <li ng-repeat="item in boughtItems.items" class="list-custom">Bought {{item.quantity}} {{item.name}}</li>
+     </ul>
+     <div class="alert alert-danger fade in" ng-show='boughtItems.empty();'>
+ <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+       Nothing bought yet.</div>
+    </div>
   </div>
 </div>
 
-
-         </div>
-  </body>
+</body>
 </html>
