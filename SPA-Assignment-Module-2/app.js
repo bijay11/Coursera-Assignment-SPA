@@ -11,8 +11,8 @@
 
         toBuyItem.items = ShoppingListCheckOffService.getBuyItems();
 
-        toBuyItem.buyItem = function(index){
-            ShoppingListCheckOffService.buyItem(index);
+        toBuyItem.buyItem = function(indexOfItems){
+            ShoppingListCheckOffService.buyItem(indexOfItems);
         };
 
         toBuyItem.empty = function(){
@@ -54,9 +54,9 @@
         ];
         var boughtItems = [];
 
-        service.buyItem = function (index) {
-            boughtItems.push(buyItems[index]);
-            buyItems.splice(index,1);
+        service.buyItem = function (indexOfItems) {
+            boughtItems.push(buyItems[indexOfItems]);
+            buyItems.splice(indexOfItems,1);
             console.log(boughtItems);
         };
         service.getBuyItems = function () {
