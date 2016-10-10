@@ -9,7 +9,7 @@
     function ToBuyController(ShoppingListCheckOffService) {
         var toBuyItem = this;
 
-        toBuyItem.items = ShoppingListCheckOffService.getBuyItems();
+        toBuyItem.items = ShoppingListCheckOffService.toBuyItem();
 
         toBuyItem.buyItem = function(indexOfItems){
             ShoppingListCheckOffService.buyItem(indexOfItems);
@@ -24,7 +24,7 @@
     function AlreadyBoughtController(ShoppingListCheckOffService) {
         var boughtItems = this;
 
-        boughtItems.items = ShoppingListCheckOffService.getBoughtItems();
+        boughtItems.items = ShoppingListCheckOffService.boughtItems();
 
         boughtItems.empty = function(){
             return boughtItems.items.length === 0;
@@ -59,10 +59,10 @@
             buyItems.splice(indexOfItems,1);
             console.log(boughtItems);
         };
-        service.getBuyItems = function () {
+        service.toBuyItem = function () {
             return buyItems;
         };
-        service.getBoughtItems = function () {
+        service.boughtItems = function () {
             return boughtItems;
         };
 
