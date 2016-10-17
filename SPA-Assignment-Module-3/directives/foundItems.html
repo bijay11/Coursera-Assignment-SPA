@@ -1,1 +1,22 @@
 
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover table-stripped">
+      <thead class=" bg-primary">
+        <tr>
+          <th>ShortName</th><th>Name</th><th>Description</th><th>Dont want it?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="result" ng-repeat="item in items">
+          <td>{{item.short_name}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.description}}</td>
+          <td><button class="btn btn-warning" ng-click="onRemove(item)"><span class="glyphicon glyphicon-remove"></span> Remove item</button> </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-danger" ng-if="!items.length"> Nothing found
+  </div>
